@@ -76,9 +76,18 @@ def g(a):
                        max_crossing_sub(a, beg, mid, end))
     return max_sub(a, 0, len(a))
 
+# O(n) solution
+@answer
+def h(a):
+    ma = ma_p = a[0]
+    for i in xrange(1, len(a)):
+        ma_p = ma_p + a[i] if ma_p > 0 else a[i]
+        ma = max(ma, ma_p)
+    return ma
+
 #a = [random.randint(-50,50) for _ in xrange(int(1000))]
 #from f6 import timeit
 #with timeit():
-#    f(a)
-#with timeit():
 #    g(a)
+#with timeit():
+#    h(a)

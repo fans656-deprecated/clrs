@@ -1,16 +1,10 @@
 from clrs import *
 
-@test
+@check
 def _(f):
-    for _ in xrange(100):
-        a = [1,2,3,4,5]
-        oa = list(a)
-        random.shuffle(a)
-        a = f(a)
-        if a != [5,4,3,2,1]:
-            raise Exception(
-                'Expect {}, got {}'.format(oa, a)
-            )
+    a, rans = case.sa()
+    rans = list(reversed(rans))
+    yield f(a) == rans
 
 @answer
 def _(a):

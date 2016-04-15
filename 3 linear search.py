@@ -1,19 +1,15 @@
 from clrs import *
 
-@test
+@check
 def _(f):
-    for _ in xrange(100):
-        a = [random.randint(0,100) for _ in xrange(100)]
-        v = random.randint(0,100)
-        i = f(v, a)
-        try:
-            ans = a.index(v)
-        except ValueError:
-            ans = None
-        if not (i == ans):
-            raise Exception(
-                'Expect {}, got {}'.format(ans, i)
-            )
+    a = [random.randint(0,100) for _ in xrange(100)]
+    v = random.randint(0,100)
+    i = f(v, a)
+    try:
+        ans = a.index(v)
+    except ValueError:
+        ans = None
+    yield i == ans
 
 @answer
 def _(v, a):
