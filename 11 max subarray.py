@@ -16,13 +16,11 @@ def std(a):
                 end = j
     return sum(a[beg:end + 1])
 
-@test
+@check
 def _(f):
-    for _ in xrange(100):
-        a = [random.randint(-50,50) for _ in xrange(100)]
-        oa = list(a)
-        if f(a) != std(oa):
-            raise Exception
+    a = [random.randint(-50,50) for _ in xrange(100)]
+    oa = list(a)
+    yield f(a) == std(oa)
 
 @answer
 def f(a):

@@ -1,39 +1,47 @@
 import random
+import inspect
 
-tester = None
+class CLRS(object):
 
-def test(f):
-    global tester
-    tester = f
+    def __init__(self):
+        self.case = None
+        self.n_cases = 100
 
-def check(arg):
-    n = 100
-    def check_deco(checker):
-        def checker_(f):
-            for _ in xrange(n):
-                for ok in checker(f):
-                    if ok:
-                        break
-                else:
-                    raise Exception
+    def check(self, case):
+        self.case = case
+        if not len(inspect.getargspec(case).args):
+            self.run()
+
+    def ignore(self, _):
+        def f(self):
+            yield True
+        return f
+
+    def answer(self, f):
+        self.run(f)
+
+    def run(self, *args, **kwargs):
+        for i in xrange(self.n_cases):
+            oks = self.case(*args, **kwargs)
+            for ok in oks:
+                if ok:
                     break
-        test(checker_)
-    if callable(arg):
-        f = arg
-        return check_deco(f)
-    else:
-        n = arg
-        return check_deco
+                else:
+                    try:
+                        next(oks)
+                    except StopIteration:
+                        pass
+                    raise Exception
+
+clrs = CLRS()
+
+check = clrs.check
+answer = clrs.answer
+ignore = clrs.ignore
 
 def sort(f):
     a, ans = case.sa()
     yield f(a), ans
-
-def answer(f):
-    r = tester(f)
-    if r:
-        print r
-    return f
 
 class Node(object):
 
@@ -77,3 +85,16 @@ class Case(object):
         return a, sorted(a)
 
 case = Case()
+
+if __name__ == '__main__':
+    import os
+    import imp
+
+    excludes = [__file__]
+
+    for fname in os.listdir('.'):
+        if fname.endswith('.py') and fname not in excludes:
+            print fname,
+            imp.load_source('', fname)
+            print 'tested'
+            os.remove(fname[:-2] + 'pyc')

@@ -2,20 +2,22 @@
 from clrs import *
 import random
 
+'''
+http://blog.csdn.net/morewindows/article/details/12684497
+'''
+
 u'''
 数组a中的数，除了一个只出现过一次外，其他都出现过两次
 找到这个只出现过一次的元素
 '''
-@test
+@check
 def _(f):
-    for _ in xrange(100):
-        a = list(set(random.randint(-100,100) for _ in xrange(100)))
-        rans = a[0]
-        a += a[1:]
-        random.shuffle(a)
-        oa = list(a)
-        if f(a) != rans:
-            raise Exception
+    a = list(set(random.randint(-100,100) for _ in xrange(100)))
+    rans = a[0]
+    a += a[1:]
+    random.shuffle(a)
+    oa = list(a)
+    yield f(a) == rans
 
 @answer
 def f(a):
@@ -62,7 +64,7 @@ def f(a):
 u'''
 本来每个数都该出现2次，结果有2个只出现了1次，找出这俩数
 '''
-@test
+@check
 def _(f):
     for _ in xrange(100):
         a = list(set(random.randint(-100,100) for _ in xrange(100)))
@@ -72,8 +74,7 @@ def _(f):
         random.shuffle(a)
         oa = list(a)
         ans = f(a)
-        if ans != rans and ans != rans2:
-            raise Exception
+        yield ans == rans or ans == rans2
 
 @answer
 def f(a):
@@ -94,7 +95,7 @@ def f(a):
 u'''
 本来每个数都该出现3次，结果有1个只出现了1次，找出这数
 '''
-@test
+@check
 def _(f):
     for _ in xrange(100):
         a = list(set(random.randint(-9,9) for _ in xrange(2)))

@@ -1,16 +1,12 @@
 from clrs import *
 
-@test
+@check
 def _(f):
-    for _ in xrange(100):
-        a = [1,2,3,4,5]
-        oa = list(a)
-        random.shuffle(a)
-        a = from_linked_list(f(to_linked_list(a)))
-        if a != [1,2,3,4,5]:
-            raise Exception(
-                'Expect {}, got {}'.format(oa, a)
-            )
+    a = [1,2,3,4,5]
+    oa = list(a)
+    random.shuffle(a)
+    a = from_linked_list(f(to_linked_list(a)))
+    yield a == [1,2,3,4,5]
 
 # selection sort
 @answer

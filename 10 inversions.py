@@ -9,14 +9,12 @@ def std(a):
                 n_invers += 1
     return n_invers
 
-@test
+@check
 def _(f):
-    for _ in xrange(1000):
-        a = list(set(random.randint(0,100) for _ in xrange(100)))
-        random.shuffle(a)
-        oa = list(a)
-        if f(a) != std(oa):
-            raise Exception
+    a = list(set(random.randint(0,100) for _ in xrange(100)))
+    random.shuffle(a)
+    oa = list(a)
+    yield f(a) == std(oa)
 
 @answer
 def f(a):

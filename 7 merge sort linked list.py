@@ -1,17 +1,13 @@
 from clrs import *
 import random
 
-@test
+@check
 def _(f):
-    for _ in xrange(100):
-        a = [random.randint(0,100) for _ in xrange(50)]
-        rans = sorted(a)
-        node = to_linked_list(a)
-        ans = from_linked_list(f(node))
-        if ans != rans:
-            print ans
-            print rans
-            raise Exception
+    a = [random.randint(0,100) for _ in xrange(50)]
+    rans = sorted(a)
+    node = to_linked_list(a)
+    ans = from_linked_list(f(node))
+    yield ans == rans
 
 @answer
 def f(node):

@@ -1,0 +1,16 @@
+2016-04-21 08:42:53
+找出n个数中前k大的数，两种办法：
+1. 建k大小的小根堆，之后的元素跟堆顶比对，小了就ignore，大了就插入堆，最后堆里就是前k大的
+这是 O(k + nlgk)
+2. 直接建n大小的大根堆，extract k个元素
+这是 O(n + klgn)
+
+奇怪，这两个哪个更快呢？
+(
+update 2016-04-21 09:26:03
+写程序测试了一下，除了 k == 2,3 之类的情况，都是n-heap方法快
+)
+可以肯定的是应用场景的限制，如果n太大，没法全部放进内存建堆，那么n大小的大根堆的办法就不能用
+
+http://stackoverflow.com/questions/17410399/finding-k-largest-elements-of-a-very-large-file-while-k-is-very-large
+这是一个升级版的问题：k也很大放不进内存

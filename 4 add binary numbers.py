@@ -8,18 +8,15 @@ def std(a, b):
     n = max(len(a), len(b)) + 1
     return ([] if len(c) == n else [0]) + c
 
-@test
+@check
 def _(f):
     def gen():
         return [1] + [random.randint(0,1)
                       for _ in xrange(random.randint(50,55))]
-    for _ in xrange(100):
-        a = gen()
-        b = gen()
-        c = f(a, b)
-        if not (c == std(a, b)):
-            print a, b, std(a, b), c
-            raise Exception
+    a = gen()
+    b = gen()
+    c = f(a, b)
+    yield c == std(a, b)
 
 @answer
 def _(a, b):

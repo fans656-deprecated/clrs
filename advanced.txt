@@ -15,3 +15,15 @@ https://en.wikipedia.org/wiki/Cocktail_shaker_sort
 https://en.wikipedia.org/wiki/Comb_sort
 https://en.wikipedia.org/wiki/Shell_sort
 冒泡排序可改进，希尔排序与插入排序的关系
+
+2016-04-19 21:28:33
+https://en.wikipedia.org/wiki/External_sorting
+
+https://en.wikipedia.org/wiki/Patience_sorting
+patience sorting / longest increasing subsequence
+
+2016-04-21 09:34:44
+https://en.wikipedia.org/wiki/Selection_algorithm#Partition-based_general_selection_algorithm
+https://en.wikipedia.org/wiki/Nearest_neighbor_search
+https://en.wikipedia.org/wiki/Partial_sorting
+http://stackoverflow.com/questions/17410399/finding-k-largest-elements-of-a-very-large-file-while-k-is-very-large

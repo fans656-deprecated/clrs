@@ -1,17 +1,13 @@
 from clrs import *
 import random
 
-@test
+@check
 def _(f):
-    for _ in xrange(100):
-        a = [1,2,3,4,5]
-        oa = list(a)
-        random.shuffle(a)
-        a = f(a)
-        if a != [1,2,3,4,5]:
-            raise Exception(
-                'Expect {}, got {}'.format(oa, a)
-            )
+    a = [1,2,3,4,5]
+    oa = list(a)
+    random.shuffle(a)
+    a = f(a)
+    yield a == [1,2,3,4,5]
 
 @answer
 def _(a):

@@ -8,7 +8,8 @@ def std(a, x):
                 return True
     return False
 
-@test
+clrs.n_cases = 1
+@check
 def _(f):
     for _ in xrange(1000):
         a = set(random.randint(0,100) for _ in xrange(100))
@@ -20,6 +21,7 @@ def _(f):
     x = 99999
     if f(a, x) != std(a, x):
         raise Exception
+    yield True
 
 def bsearch(a, t):
     beg, end = 0, len(a)
