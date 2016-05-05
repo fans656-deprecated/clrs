@@ -27,3 +27,23 @@ https://en.wikipedia.org/wiki/Selection_algorithm#Partition-based_general_select
 https://en.wikipedia.org/wiki/Nearest_neighbor_search
 https://en.wikipedia.org/wiki/Partial_sorting
 http://stackoverflow.com/questions/17410399/finding-k-largest-elements-of-a-very-large-file-while-k-is-very-large
+
+2016-04-22 09:49:55
+https://en.wikipedia.org/wiki/Prefix_sum
+
+2016-04-26 10:29:20
+https://en.wikipedia.org/wiki/Integer_factorization
+
+https://en.wikipedia.org/wiki/Divisor_function
+http://mathschallenge.net/library/number/number_of_divisors
+
+2016-04-28 14:24:11
+https://en.wikipedia.org/wiki/Flood_fill
+
+2016-05-02 19:05:52
+https://en.wikipedia.org/wiki/Cycle_detection
+https://leetcode.com/discuss/93215/only-person-dont-really-understand-why-the-loop-solution-work
+http://keithschwarz.com/interesting/code/find-duplicate/FindDuplicate.python.html
+
+2016-05-04 16:42:11
+https://en.wikipedia.org/wiki/Multiplication_algorithm

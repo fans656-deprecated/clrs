@@ -19,6 +19,7 @@ class CLRS(object):
 
     def answer(self, f):
         self.run(f)
+        return f
 
     def run(self, *args, **kwargs):
         for i in xrange(self.n_cases):
@@ -70,6 +71,7 @@ class Case(object):
         '''
         if simple:
             lo, hi = 0, 9
+            n = 5
         else:
             if isinstance(bound, tuple):
                 lo, hi = bound

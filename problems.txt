@@ -1,0 +1,10 @@
+hash table
+最小生成树
+prim
+trie
+kmp leet3
+求根号 https://www.zhihu.com/question/35133069/answer/97832096
+    Newton-Raphson
+    magic number 0x5f3759df
+    https://zhuanlan.zhihu.com/p/20820978
+permutation/combination

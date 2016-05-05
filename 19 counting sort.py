@@ -51,3 +51,34 @@ def _():
     ans = count(c, b, e, lo)
     rans = std(a, b, e)
     yield ans == rans
+
+########################################
+u'''
+https://en.wikipedia.org/wiki/Counting_sort
+c中存储 < c[i] 的元素个数
+最后从前往后放置，比CLRS里的写起来更自然点
+'''
+
+@check
+def _(f):
+    a, rans = case.sa()
+    yield f(a) == rans
+
+@answer
+def counting_sort(a):
+    mi, ma = min(a), max(a)
+    k = ma - mi + 1
+    b = list(a)
+    a, b = b, a
+    c = [0] * k
+    for t in a:
+        c[t - mi] += 1
+    tot = 0
+    for i in xrange(k):
+        t = c[i]
+        c[i] = tot
+        tot += t
+    for t in a:
+        b[c[t - mi]] = t
+        c[t - mi] += 1
+    return b

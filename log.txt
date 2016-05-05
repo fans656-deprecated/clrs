@@ -23,3 +23,17 @@ Majority Element
 
 https://www.zhihu.com/question/42986437
 生成随机浮点数
+
+2016-04-22 10:20:10
+counting sort 在k个洞里放的是元素的位置信息
+pigeonhole sort 在k个洞里直接放元素
+bucket sort 在m(<k)个洞里放元素，所以需要在每个洞里再排序
+
+当 k 不大时，使用 counting sort 或 pigeonhole sort
+pigeonhole 很适合对链表排序
+而 counting 因为没了可以random access的数组，它计算的位置信息也没法好好利用
+当 k 太大时，折衷一下，少点洞，每个洞里多放点 —— 只是最坏复杂度的性质变了，不过平均还是 O(n)
+
+2016-04-26 21:19:25
+https://leetcode.com/problems/bulb-switcher/
+https://en.wikipedia.org/wiki/Square_number

@@ -14,3 +14,10 @@ update 2016-04-21 09:26:03
 
 http://stackoverflow.com/questions/17410399/finding-k-largest-elements-of-a-very-large-file-while-k-is-very-large
 这是一个升级版的问题：k也很大放不进内存
+
+2016-05-05 16:41:02
+http://www.cnblogs.com/AnnieKim/archive/2013/06/15/MorrisTraversal.html
+http://www.geeksforgeeks.org/morris-traversal-for-preorder/
+http://stackoverflow.com/questions/5502916/explain-morris-inorder-tree-traversal-without-using-stacks-or-recursion
+O(1) space traversal - change the tree during process but unchanged at end
+以及cnblogs中github链接里的中序遍历——不需要放置额外信息
